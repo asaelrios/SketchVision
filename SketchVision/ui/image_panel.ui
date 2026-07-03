@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImagePanel</class>
+ <widget class="QWidget" name="ImagePanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>574</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Vision Workbench</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <layout class="QVBoxLayout" name="mainLayout">
+       <!-- IMAGE GROUP -->
+       <item>
+        <widget class="QGroupBox" name="groupImage">
+         <property name="title"><string>Image Source</string></property>
+         <layout class="QVBoxLayout" name="imageLayout">
+          <item><widget class="QPushButton" name="btnOpenImage"><property name="text"><string>Open Image...</string></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+
+       <!-- VIEW MODE GROUP -->
+       <item>
+        <widget class="QGroupBox" name="groupViewMode">
+         <property name="title"><string>View Mode</string></property>
+         <layout class="QVBoxLayout" name="viewModeLayout">
+          <item><widget class="QCheckBox" name="chkGray"><property name="text"><string>Grayscale View</string></property></widget></item>
+          <item><widget class="QCheckBox" name="chkBinary"><property name="text"><string>Binarized View</string></property></widget></item>
+          <item><widget class="QLabel" name="labelThreshold"><property name="text"><string>Binarization Threshold</string></property></widget></item>
+          <item><widget class="QSlider" name="sliderThreshold"><property name="maximum"><number>255</number></property><property name="value"><number>127</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+
+       <!-- DISPLAY GROUP -->
+       <item>
+        <widget class="QGroupBox" name="groupDisplay">
+         <property name="title"><string>Image Enhancement</string></property>
+         <layout class="QFormLayout" name="displayLayout">
+          <item row="0" column="0"><widget class="QLabel" name="labelOpacity"><property name="text"><string>Opacity</string></property></widget></item>
+          <item row="0" column="1"><widget class="QSlider" name="sliderOpacity"><property name="maximum"><number>100</number></property><property name="value"><number>100</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelBrightness"><property name="text"><string>Brightness</string></property></widget></item>
+          <item row="1" column="1"><widget class="QSlider" name="sliderBrightness"><property name="minimum"><number>-100</number></property><property name="maximum"><number>100</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelContrast"><property name="text"><string>Contrast</string></property></widget></item>
+          <item row="2" column="1"><widget class="QSlider" name="sliderContrast"><property name="minimum"><number>-100</number></property><property name="maximum"><number>100</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelGamma"><property name="text"><string>Gamma</string></property></widget></item>
+          <item row="3" column="1"><widget class="QSlider" name="sliderGamma"><property name="minimum"><number>1</number></property><property name="maximum"><number>300</number></property><property name="value"><number>100</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+
+       <!-- TRANSFORM GROUP -->
+       <item>
+        <widget class="QGroupBox" name="groupTransform">
+         <property name="title"><string>Transform</string></property>
+         <layout class="QFormLayout" name="transformLayout">
+          <item row="0" column="0"><widget class="QLabel" name="labelScale"><property name="text"><string>Scale (%)</string></property></widget></item>
+          <item row="0" column="1"><widget class="QSlider" name="sliderScale"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelRotation"><property name="text"><string>Rotation</string></property></widget></item>
+          <item row="1" column="1"><widget class="QSlider" name="sliderRotation"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelPosX"><property name="text"><string>X Position</string></property></widget></item>
+          <item row="2" column="1"><widget class="QSlider" name="sliderPosX"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelPosY"><property name="text"><string>Y Position</string></property></widget></item>
+          <item row="3" column="1"><widget class="QSlider" name="sliderPosY"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+          <item row="4" column="1"><widget class="QCheckBox" name="chkLockAspect"><property name="text"><string>Lock Aspect Ratio</string></property><property name="checked"><bool>true</bool></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+
+       <!-- FILTERS GROUP -->
+       <item>
+        <widget class="QGroupBox" name="groupFilters">
+         <property name="title"><string>Processing Filters</string></property>
+         <layout class="QVBoxLayout" name="filtersLayout">
+          <item>
+           <layout class="QHBoxLayout" name="gaussianLayout">
+            <item><widget class="QCheckBox" name="chkGaussian"><property name="text"><string>Gaussian Blur</string></property></widget></item>
+            <item><widget class="QSlider" name="sliderGaussian"><property name="minimum"><number>1</number></property><property name="maximum"><number>31</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="medianLayout">
+            <item><widget class="QCheckBox" name="chkMedian"><property name="text"><string>Median Blur</string></property></widget></item>
+            <item><widget class="QSlider" name="sliderMedian"><property name="minimum"><number>1</number></property><property name="maximum"><number>31</number></property><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property></widget></item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btnReset"><property name="text"><string>Reset All</string></property></widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

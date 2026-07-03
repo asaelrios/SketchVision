@@ -1,0 +1,8 @@
+.idea/
+.venv/
+__pycache__/
+*.pyc
+sv_render_*.png
+sv_temp_*.png
+*.FCStd1
+*.bak
